@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCROLLSAFE - Register</title>
+    <style>
+        body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a calming background color */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #36992b;
+    /* Light blue-gray background */
+    color: #333;
+    /* Dark gray text for readability */
+    line-height: 1.6;
+}
+
+/* Center the container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    /* Center the container with margin */
+    padding: 20px;
+    background-color: #ffffff;
+    /* White background for the form */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+}
+
+/* Style the headings */
+h1 {
+    text-align: center;
+    color: #4a90e2;
+    /* Soft blue color for the main heading */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    /* Darker color for subheading */
+    margin-bottom: 20px;
+    /* Space below the subheading */
+}
+
+/* Style the form groups */
+.form-group {
+    margin-bottom: 15px;
+    /* Space between form groups */
+}
+
+/* Style labels */
+label {
+    display: block;
+    /* Make labels block elements */
+    margin-bottom: 5px;
+    /* Space below labels */
+    font-weight: bold;
+    /* Bold labels for emphasis */
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+    width: 80%;
+    /* Full width */
+    padding: 10px;
+    /* Padding for comfort */
+    border: 1px solid #ccc;
+    /* Light gray border */
+    border-radius: 5px;
+    /* Rounded corners */
+    transition: border-color 0.3s;
+    /* Smooth transition for focus */
+}
+
+/* Change border color on focus */
+input:focus {
+    border-color: #4a90e2;
+    /* Change border color to blue on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+/* Style the fieldset */
+fieldset {
+    border: 1px solid #ccc;
+    /* Light gray border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px;
+    /* Padding inside fieldset */
+    margin-bottom: 15px;
+    /* Space below fieldset */
+}
+
+/* Style the legend */
+legend {
+    font-weight: bold;
+    /* Bold legend text */
+    color: #333;
+    /* Darker color for legend */
+}
+
+/* Style the button */
+.button {
+    width: 35%;
+    align-self: center;
+    margin-left: 28%;
+    padding: 10px;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Change button background on hover */
+button:hover {
+    background-color: #357ab8;
+    /* Darker blue on hover */
+}
+
+/* Style for gender options */
+.gender-options {
+    display: flex;
+    /* Flexbox for layout */
+    justify-content: space-around;
+    /* Space out options */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        /* Reduce margin on smaller screens */
+        padding: 15px;
+        /* Reduce padding on smaller screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to SCROLLSAFE</h1>
+        
+        
+            <div class="form-section">
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Username:</label>
+                        <input type="text" id="registerUsername" name="registerUsername" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" name="registerEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" id="registerPassword" name="registerPassword" required>
+                    </div>
+                    
+                    <fieldset>
+                        <legend>Gender:</legend>
+                        <div class="gender-options">
+                            <label>
+                                <input type="radio" name="gender" value="male"> Male
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female"> Female
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="others"> Others
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="registerPhone">Phone Number:</label>
+                        <input type="tel" id="registerPhone" name="registerPhone" required>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="registerDOB">Date of Birth:</label>
+                        <input type="date" id="registerDOB" name="registerDOB" required>
+                    </div>
+
+                    <div class="button">
+                        <a href="home.html" class="button">Register</a>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

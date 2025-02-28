@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCROLLSAFE - Timer</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e5e5e5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Timer Container */
+        .timer-container {
+            background-color: #fff;
+            width: 350px;
+            padding: 160px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80vw;
+            background-image: url(forest.jpg);
+        }
+
+        /* Title */
+        h1 {
+            font-size: 24px;
+            color: rgb(121, 201, 0);
+            margin-bottom: 20px;
+        }
+
+        /* Input Field */
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Buttons */
+        button {
+            width: 85%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Start Button */
+        #startButton {
+            background-color: #4CAF50;
+            color: white;
+            width: 25vw;
+        }
+
+        #startButton:hover {
+            background-color: #45a049;
+        }
+
+        /* Stop Button */
+        #stopButton {
+            background-color: #ff4d4d;
+            color: white;
+            width: 25vw;
+        }
+
+        #stopButton:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        #stopButton:hover:enabled {
+            background-color: #e84343;
+        }
+
+        /* Countdown Display */
+        #countdownDisplay {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            background-color:#f3f4f6;
+            width: 90vw;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: rgb(0, 94, 0);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100vh;
+            gap: 20px;
+        }
+
+        .home {
+            font-size: 25px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="home.html">
+                <div class="home">
+                    Home
+                </div>
+            </a>
+
+            <a href="a.html">
+                <div class="home">
+                    Set Timer
+                </div>
+            </a>
+
+            <a href="progress.html">
+                <div class="home">
+                    View Progress
+                </div>
+            </a>
+
+            <a href="profile.html">
+                <div class="home">
+                    Profile
+                </div>
+            </a>
+
+            <a href="login.html">
+                <div class="home">
+                    Log Out
+                </div>
+            </a>
+        </div>
+
+        <div class="timer-container">
+            <h1>Set  Timer</h1>
+            <input type="number" id="timeInput" placeholder="Minutes" min="1" />
+            <button id="startButton">Start Timer</button>
+            <button id="stopButton" disabled>Stop Timer</button>
+            <p id="countdownDisplay"></p>
+        </div>
+
+        <script>
+            let timer;  // Stores the countdown timer
+            let timeLeft;  // Remaining time in seconds
+
+            document.getElementById("startButton").addEventListener("click", function () {
+                let minutes = parseInt(document.getElementById("timeInput").value);
+                if (isNaN(minutes) || minutes <= 0) {
+                    alert("Enter a valid number!");
+                    return;
+                }
+
+                timeLeft = minutes * 60;  // Convert minutes to seconds
+                updateCountdownDisplay();  // Show initial time
+                alert("Timer set for " + minutes + " minutes.");
+
+                // Start the countdown
+                timer = setInterval(() => {
+                    timeLeft--;
+                    updateCountdownDisplay();
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timer);
+                        showAlert();  // Call the function to show the alert
+                        document.getElementById("stopButton").disabled = true;
+                    }
+                }, 1000);
+
+                document.getElementById("stopButton").disabled = false;  // Enable stop button
+            });
+
+            document.getElementById("stopButton").addEventListener("click", function () {
+                clearInterval(timer);
+                alert("Timer canceled.");
+                document.getElementById("stopButton").disabled = true;
+                document.getElementById("countdownDisplay").textContent = "";
+            });
+
+            function updateCountdownDisplay() {
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                document.getElementById("countdownDisplay").textContent =
+                    "Time Left: " + minutes + "m " + seconds + "s";
+            }
+
+            function showAlert() {
+                let userResponse = confirm("You've been subjected to too much screen time. Now quit using.");
+                if (userResponse) {
+                    alert("Good choice!");
+                } else {
+                    alert("Be mindful of your screen time!");
+                }
+            }
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCROLLSAFE - Profile</title>
+    <link rel="stylesheet" href="xyz.css">
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display:flex;
+            height: 100vh;
+            background-color: #f3f4f6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .profile-container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80vw;
+            background-image: url(profile.jpg);
+        }
+
+        .dark-mode .profile-container {
+            background: #333;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #3b82f6;
+        }
+
+        .profile-header div {
+            text-align: left;
+        }
+
+        .profile-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .profile-header p {
+            margin: 0;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .profile-edit {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            color: white; 
+        }
+
+        .profile-edit label {
+            font-weight: bold;
+        }
+
+        .profile-edit input {
+            width: 30%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .save-button {
+            width: 30%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background: rgb(46, 182, 46);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .save-button:hover {
+            background: darkgreen;
+        }
+        h2{
+            color: white;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="home.html">
+                <div class="home">
+                    Home
+                </div>
+            </a>
+
+            <a href="timer.html">
+                <div class="home">
+                    Set Timer
+                </div>
+            </a>
+
+            <a href="progress.html">
+                <div class="home">
+                    View Progress
+                </div>
+            </a>
+
+            <a href="profile.html">
+                <div class="home">
+                    Profile
+                </div>
+            </a>
+
+            <a href="login.html">
+                <div class="home">
+                    Log Out
+                </div>
+            </a>
+        </div>
+
+
+
+        <div class="profile-container">
+            <div class="profile-header">
+                <img src="btlogo.png" alt="Profile Picture">
+                <div>
+                    <h2>Ben Thomsan</h2>
+                    <p>thomsan@123</p>
+                </div>
+            </div>
+            <div class="profile-edit">
+                <label for="username">Username:</label>
+                <input type="text" id="username" value="Ben Thomsan">
+
+                <label for="userid">Email:</label>
+                <input type="text" id="userid" value="thomsan@123">
+
+                <label for="password">Password:</label>
+                <input type="password" id="userid" value=".........">
+
+                <label for="Gender">Gender:</label>
+                <input type="text" id="userid" value="Female">
+        
+                <label for="registerDOB">Date of Birth:</label>
+                <input type="text" name="registerDOB" value="12-08-1989">
+
+                <label for="phone">Phone No:</label>
+                <input type="text" id="phone" value="123-456-7890">
+
+                <button class="save-button">Save Changes</button>
+            </div>
+            
+        </div>
+
+</body>
+
+</html>
